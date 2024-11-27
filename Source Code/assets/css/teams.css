@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 body {
@@ -253,6 +252,7 @@ h1 {
 .together-section {
     margin-top: 6rem;
     padding: 3rem;
+    /* background: #0f0025; */
     border-radius: 1rem;
 }
 

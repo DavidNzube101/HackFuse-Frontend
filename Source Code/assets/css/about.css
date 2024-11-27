@@ -5,7 +5,6 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
     /* background: linear-gradient(to top, #0A051A, white); */
     background: white;
     color: #fff;
@@ -163,6 +162,7 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
 }
@@ -178,7 +178,7 @@ body {
 .carousel-nav.next {
     right: -10px;
     
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
 }
 
 .gradient-text {
@@ -224,3 +224,79 @@ body {
     background: #12141D;
     padding: 20px 0px;
 }
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 2rem;
+}
+
+.carousel-item {
+    flex: 0 0 calc(33.333% - 1.33rem);
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    aspect-ratio: 1/1;
+    height: 300px;
+    border-radius: 100px 0pc 100px 0pc;
+    display: flex;
+    cursor: pointer;
+    align-items: flex-end;
+    color: white;
+}
+
+.carousel-item div {
+    text-align: left;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 75px;
+    height: 75px;
+    background: rgba(207, 136, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.carousel-nav img{
+    height: 50px;
+    width: 50px;
+}
+.carousel-nav.prev {
+    left: 10px;
+}
+
+.carousel-nav.next {
+    right: 10px;
+
+}
+
+.carousel-nav img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.carousel-nav.next img {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(100% - 2rem);
+        min-width: 250px;
+    }
+}
+

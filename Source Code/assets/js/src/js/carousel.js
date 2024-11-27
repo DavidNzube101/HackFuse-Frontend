@@ -16,10 +16,12 @@ export class Carousel {
         this.nextBtn.addEventListener('click', () => this.navigate('next'));
         this.updateVisibility();
         this.positionCards();
+        this.updateActiveStates();
 
         // Handle window resize
         window.addEventListener('resize', () => {
             this.positionCards();
+            this.updateActiveStates();
         });
     }
 
@@ -32,6 +34,7 @@ export class Carousel {
 
         this.updateVisibility();
         this.positionCards();
+        this.updateActiveStates();
     }
 
     positionCards() {
@@ -41,8 +44,25 @@ export class Carousel {
         this.grid.style.transform = `translateX(${offset}px)`;
     }
 
+    updateActiveStates() {
+        // Remove all active classes first
+        Array.from(this.grid.children).forEach(card => {
+            card.classList.remove('active');
+        });
+
+        // Add active class to visible cards
+        const activeIndex = this.currentPage * this.itemsPerPage;
+        for(let i = 0; i < this.itemsPerPage; i++) {
+            const card = this.grid.children[activeIndex + i];
+            if (card) {
+                card.classList.add('active');
+            }
+        }
+    }
+
     updateVisibility() {
         this.prevBtn.disabled = this.currentPage === 0;
         this.nextBtn.disabled = this.currentPage === this.totalPages - 1;
     }
 }
+

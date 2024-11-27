@@ -43,3 +43,45 @@ document.querySelectorAll('.faq-question').forEach(question => {
       item.classList.toggle('active');
   });
 });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const carousel = document.querySelector('.cards');
+//   const leftArrow = document.querySelector('.carousel-arrow.left');
+//   const rightArrow = document.querySelector('.carousel-arrow.right');
+
+//   leftArrow.addEventListener('click', () => {
+//       carousel.scrollBy({ left: -300, behavior: 'smooth' });
+//   });
+
+//   rightArrow.addEventListener('click', () => {
+//       carousel.scrollBy({ left: 300, behavior: 'smooth' });
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+  function initCarousel(containerClass) {
+      const container = document.querySelector(containerClass);
+      if (!container) return;
+
+      const carousel = container.querySelector('.cards, .speakers');
+      const leftArrow = container.querySelector('.carousel-arrow.left');
+      const rightArrow = container.querySelector('.carousel-arrow.right');
+
+      if (!carousel || !leftArrow || !rightArrow) return;
+
+      const scrollAmount = carousel.clientWidth * 0.8;
+
+      leftArrow.addEventListener('click', () => {
+          carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      rightArrow.addEventListener('click', () => {
+          carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+  }
+
+  // Initialize carousels
+  initCarousel('.cards-container');
+  initCarousel('.speakers-container');
+});
+

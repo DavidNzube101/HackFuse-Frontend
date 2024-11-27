@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 body {
@@ -279,3 +278,132 @@ main{
         right: -1rem;
     }
 }
+
+/* Update the carousel containers */
+.speakers-carousel, .panelists-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 15%;  /* Add padding to show partial cards */
+}
+
+/* Add mask overlays for fade effect */
+.speakers-carousel::before,
+.speakers-carousel::after,
+.panelists-carousel::before,
+.panelists-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 15%;  /* Match the container padding */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.speakers-carousel::before,
+.panelists-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(87, 46, 117, 0) 0%, 
+        rgba(87, 46, 117, 0) 20%,
+        rgba(88, 46, 117, 0) 100%
+    );
+}
+
+.speakers-carousel::after,
+.panelists-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(87, 46, 117, 0) 0%, 
+        rgba(87, 46, 117, 0.007) 20%,
+        rgba(88, 46, 117, 0) 100%
+    );
+}
+
+/* Update the grid containers */
+.speakers-grid, .panelists-grid {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+/* Update card styles */
+.speaker-card, .panelist-card {
+    flex: 0 0 calc(40% - 1rem); /* Adjust card width */
+    min-width: calc(40% - 1rem);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0.5; /* Default opacity for non-active cards */
+    transform: scale(0.9);
+}
+
+/* Active card styles */
+.speaker-card.active, .panelist-card.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Update navigation buttons */
+.carousel-btn, .carousel-btn-p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background: rgba(147, 51, 234, 0.5);
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover, .carousel-btn-p:hover {
+    background: rgba(147, 51, 234, 0.8);
+}
+
+.carousel-btn.prev, .carousel-btn-p.prev {
+    left: 5%;
+}
+
+.carousel-btn.next, .carousel-btn-p.next {
+    right: 5%;
+}
+
+/* Update responsive styles */
+@media (max-width: 1024px) {
+    .speakers-carousel, .panelists-carousel {
+        padding: 0 10%;
+    }
+    
+    .speaker-card, .panelist-card {
+        flex: 0 0 calc(60% - 1rem);
+        min-width: calc(60% - 1rem);
+    }
+    
+    .carousel-btn.prev, .carousel-btn-p.prev {
+        left: 2%;
+    }
+    
+    .carousel-btn.next, .carousel-btn-p.next {
+        right: 2%;
+    }
+}
+
+@media (max-width: 768px) {
+    .speakers-carousel, .panelists-carousel {
+        padding: 0 5%;
+    }
+    
+    .speaker-card, .panelist-card {
+        flex: 0 0 calc(80% - 1rem);
+        min-width: calc(80% - 1rem);
+    }
+}
+

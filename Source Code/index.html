@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HackFuze 2024</title>
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            /* font-weight: <weight>; */
+            font-style: normal;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,55 +107,52 @@
                 <p class="subtitle">Where Innovation Meets Collaboration</p>
                 <p class="description">
                     At <span class="highlight-text">HackFuze 2024</span>, we believe in the power of technology to
-                    change the
-                    world.
-                    Our mission is simple: to bring together a global community of creative thinkers,
+                    change the world. Our mission is simple: to bring together a global community of creative thinkers,
                     problem solvers, and tech enthusiasts to push the boundaries of innovation. This is
-                    not just a competition—it’s a movement to ignite fresh ideas, challenge the status
+                    not just a competition—it's a movement to ignite fresh ideas, challenge the status
                     quo, and create solutions that matter.
                 </p>
-                <div class="cards">
-                    <img class="carouselARrror" height="40px" width="40px" src="assets/media/purple-arrow-left.png"
-                        alt="Left">
-                    <div class="cards-con">
+                <div class="cards-container">
+                    <button class="carousel-arrow left">
+                        <img src="assets/media/purple-arrow-left.png" alt="arrow">
+                    </button>
+                    <div class="cards">
                         <div class="card"
                             style="background: url(assets/media/our-aiion.png); background-size: cover; background-repeat: no-repeat;">
                             <div>
                                 <p class="card-title">Our Motto</p>
                                 <p>To inspire, educate, and equip participants with the skills, resources, and
-                                    connections
-                                    they need to turn their ideas into real-world solutions, contributing to
-                                    advancements in
-                                    technology and society.</p>
+                                    connections they need to turn their ideas into real-world solutions, contributing to
+                                    advancements in technology and society.</p>
                             </div>
                         </div>
                         <div class="card"
                             style="background: url(assets/media/our-aims.png); background-size: cover; background-repeat: no-repeat;">
                             <div>
                                 <p class="card-title">Our Vision</p>
-                                <p>We envision a future where technology addresses the world’s most pressing challenges.
+                                <p>We envision a future where technology addresses the world's most pressing challenges.
                                     HackFuze is designed to empower individuals and teams to transform their bold ideas
-                                    into
-                                    impactful solutions.</p>
+                                    into impactful solutions.</p>
                             </div>
                         </div>
                         <div class="card"
                             style="background: url(assets/media/our-vision.png); background-size: cover; background-repeat: no-repeat;">
                             <div>
                                 <p class="card-title">Our Vision</p>
-                                <p>We envision a future where technology addresses the world’s most pressing challenges.
+                                <p>We envision a future where technology addresses the world's most pressing challenges.
                                     HackFuze is designed to empower individuals and teams to transform their bold ideas
-                                    into
-                                    impactful solutions.</p>
+                                    into impactful solutions.</p>
                             </div>
                         </div>
                     </div>
-                    <img class="carouselARrror" height="40px" width="40px" src="assets/media/purple-arrow-left.png"
-                        style="    transform: rotate(180deg);" alt="Left">
-
+                    <button class="carousel-arrow right">
+                        <img src="assets/media/purple-arrow-left.png" alt="arrow">
+                    </button>
                 </div>
             </div>
         </section>
+
+
     </main>
 
     <main class="special-hackathon-body">
@@ -168,13 +180,12 @@
             <h1 class="section-title">Esteemed Speakers</h1>
             <h2 class="sub-title">Keynote Speakers</h2>
             <div class="speakers-container">
-                <!-- <button class="arrow-button left">&lt;</button> -->
-                <img class="arrow-button left" src="assets/media/purple-arrow-left.png" alt="">
-
+                <button class="carousel-arrow left">
+                    <img src="assets/media/purple-arrow-left.png" alt="arrow">
+                </button>
                 <div class="speakers">
                     <div class="speaker"
                         style="background: url(assets/media/speaker1.png); background-size: cover; background-repeat: no-repeat;">
-                        <!-- <img src="assets/media/speaker1.png" alt="Alexei Martinez"> -->
                         <div>
                             <p class="name">Alexei Martinez</p>
                             <p class="position">Chief Innovation Officer, GreenFuture Initiative</p>
@@ -182,15 +193,30 @@
                     </div>
                     <div class="speaker"
                         style="background: url(assets/media/speak.png); background-repeat: no-repeat; background-size: cover;">
-                        <!-- <img src="assets/media/speak.png" alt="Dr. Sarah Nyakundi"> -->
                         <div>
                             <p class="name">Dr. Sarah Nyakundi</p>
                             <p class="position">Global Head of AI & Machine Learning, TechGenius Inc.</p>
                         </div>
                     </div>
+                    <div class="speaker"
+                        style="background: url(assets/media/campbell.png); background-repeat: no-repeat; background-size: cover;">
+                        <div>
+                            <p class="name">Dr. Campbell Ian</p>
+                            <p class="position">Global Head of AI & Machine Learning, TechGenius Inc.</p>
+                        </div>
+                    </div>
+                    <div class="speaker"
+                        style="background: url(assets/media/rojas.png); background-repeat: no-repeat; background-size: cover;">
+                        <div>
+                            <p class="name">Emmanuel Rojas</p>
+                            <p class="position">Global Head of AI & Machine Learning, TechGenius Inc.</p>
+                        </div>
+                    </div>
+                    <!-- Add more speaker cards here as needed -->
                 </div>
-                <!-- <button class="arrow-button right">&gt;</button> -->
-                <img class="arrow-button right" src="assets/media/purple-arrow-left.png" alt="">
+                <button class="carousel-arrow right">
+                    <img src="assets/media/purple-arrow-left.png" alt="arrow">
+                </button>
             </div>
         </section>
     </main>
@@ -235,7 +261,8 @@
                         <button class="faq-toggle">+</button>
                     </div>
                     <div class="faq-answer">
-                        <p>You can register individually and join a team later or form your own team during the event.</p>
+                        <p>You can register individually and join a team later or form your own team during the event.
+                        </p>
                     </div>
                 </div>
 
@@ -265,9 +292,12 @@
                         <button class="faq-toggle">+</button>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, there will be exciting prizes for the top teams. Prizes can include cash rewards, gadgets,
-                            internships, mentorship opportunities, and more. Additionally, there may be specialized awards,
-                            such as Best Use of AI, Best Solution for Social Good, and People's Choice Award for the most
+                        <p>Yes, there will be exciting prizes for the top teams. Prizes can include cash rewards,
+                            gadgets,
+                            internships, mentorship opportunities, and more. Additionally, there may be specialized
+                            awards,
+                            such as Best Use of AI, Best Solution for Social Good, and People's Choice Award for the
+                            most
                             popular project as voted by participants and attendees.</p>
                     </div>
                 </div>
@@ -280,7 +310,8 @@
             <div class="hero-content">
                 <h1>Get your <span>Early Bird Ticket</span></h1>
                 <p class="ht-1">Don't Miss Out on Innovation's Biggest Stage!</p>
-                <p class="ht-2">The countdown to HackFuze 2024 has begun, and now’s your<br>chance to secure your spot at a discounted rate. Early bird tickets<br>are now available for a limited time, so why wait?</p>
+                <p class="ht-2">The countdown to HackFuze 2024 has begun, and now’s your<br>chance to secure your spot
+                    at a discounted rate. Early bird tickets<br>are now available for a limited time, so why wait?</p>
                 <a href="#" class="register-btn">
                     Register
                     &nbsp;&nbsp;&nbsp;
@@ -300,14 +331,14 @@
                             At HackFuze 2024, we believe in the power of technology to change the world.
                         </p>
                     </div>
-                    
+
                     <nav class="nav-links">
                         <a href="#">About</a>
                         <a href="#">Speakers</a>
                         <a href="#">Sponsors</a>
                         <a href="#">Teams</a>
                     </nav>
-    
+
                     <div class="social-links">
                         <a href="#">Facebook</a>
                         <a href="#">Twitter</a>
@@ -315,7 +346,7 @@
                         <a href="#">Tiktok</a>
                     </div>
                 </div>
-    
+
                 <div class="footer-bottom">
                     <a href="#">Privacy Policy</a>
                     <span class="copyright">@Brainel UI/UX Dsgn 2024</span>
